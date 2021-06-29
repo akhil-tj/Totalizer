@@ -454,7 +454,7 @@ class CalculatorBodyMobile extends StatelessWidget {
                 children: <TextSpan>[
                   TextSpan(
                       text:
-                          'This application is not officially povided by CUSAT. Please '),
+                          'This application is not registered under CUSAT. Please '),
                   TextSpan(
                     text: 'verify the equation',
                     style: TextStyle(
