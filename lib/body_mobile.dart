@@ -65,7 +65,7 @@ class CalculatorBodyMobile extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SelectableText(
-                  'Semester 1(Required)*',
+                  'Semester 1 (Required)*',
                   style: TextStyle(
                     color: Colors.black,
                     fontFamily: 'Montserrat',
@@ -533,7 +533,6 @@ class CalculatorBodyMobile extends StatelessWidget {
                           } else {
                             throw 'Could not launch $url';
                           }
-                          print('Tapped absurd.design');
                           print('Tapped Akhil T J');
                         },
                       text: 'Akhil T J',

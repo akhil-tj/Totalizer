@@ -1,4 +1,6 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class CalculatorBodyDesktop extends StatelessWidget {
   const CalculatorBodyDesktop({Key? key}) : super(key: key);
@@ -40,7 +42,7 @@ class CalculatorBodyDesktop extends StatelessWidget {
                 ),
                 SizedBox(height: 40),
                 SelectableText(
-                  'GPA of Each Semester',
+                  'GPA of Each Semester(Eg: 7.14)',
                   style: TextStyle(
                     fontFamily: 'Montserrat',
                     fontSize: 20,
@@ -78,7 +80,7 @@ class CalculatorBodyDesktop extends StatelessWidget {
                                     fontSize: 16,
                                   ),
                                   decoration: InputDecoration(
-                                    hintText: 'Semester 1 (Eg: 7.14)*',
+                                    hintText: 'Semester 1 (Required)*',
                                     border: InputBorder.none,
                                   ),
                                 ),
@@ -113,7 +115,7 @@ class CalculatorBodyDesktop extends StatelessWidget {
                                     fontSize: 16,
                                   ),
                                   decoration: InputDecoration(
-                                    hintText: 'Semester 2 (Eg: 8.465)*',
+                                    hintText: 'Semester 2',
                                     border: InputBorder.none,
                                   ),
                                 ),
@@ -377,6 +379,17 @@ class CalculatorBodyDesktop extends StatelessWidget {
                           text:
                               'This application is not officially povided by CUSAT. Please '),
                       TextSpan(
+                        mouseCursor: MaterialStateMouseCursor.clickable,
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () async {
+                            const url = 'https://google.com';
+                            if (await canLaunch(url)) {
+                              await launch(url);
+                            } else {
+                              throw 'Could not launch $url';
+                            }
+                            print('Tapped Verify the Equation');
+                          },
                         text: 'verify the equation',
                         style: TextStyle(
                           decoration: TextDecoration.underline,
@@ -391,6 +404,17 @@ class CalculatorBodyDesktop extends StatelessWidget {
                               ' used for calculation before blindly trusting the developer.'),
                       TextSpan(text: ' Illustration(s) from '),
                       TextSpan(
+                        mouseCursor: MaterialStateMouseCursor.clickable,
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () async {
+                            const url = 'https://absurd.design';
+                            if (await canLaunch(url)) {
+                              await launch(url);
+                            } else {
+                              throw 'Could not launch $url';
+                            }
+                            print('Tapped absurd.design');
+                          },
                         text: 'absurd.design',
                         style: TextStyle(
                           decoration: TextDecoration.underline,
@@ -422,6 +446,18 @@ class CalculatorBodyDesktop extends StatelessWidget {
                         children: [
                           TextSpan(text: 'Designed & Developed by '),
                           TextSpan(
+                            mouseCursor: MaterialStateMouseCursor.clickable,
+                            recognizer: TapGestureRecognizer()
+                              ..onTap = () async {
+                                const url = 'https://akhiltj.codes';
+                                if (await canLaunch(url)) {
+                                  await launch(url);
+                                } else {
+                                  throw 'Could not launch $url';
+                                }
+
+                                print('Tapped Akhil T J');
+                              },
                             text: 'Akhil T J',
                             style: TextStyle(
                               decoration: TextDecoration.underline,
