@@ -27,7 +27,7 @@ class CalculatorBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.fromLTRB(140, 56, 130, 56),
+      padding: EdgeInsets.fromLTRB(140, 40, 130, 32),
       child: Row(
         children: [
           Expanded(
@@ -42,7 +42,7 @@ class CalculatorBody extends StatelessWidget {
                     fontWeight: FontWeight.w800,
                   ),
                 ),
-                SizedBox(height: 26),
+                SizedBox(height: 24),
                 SelectableText(
                   'Provide the following details to calculate your CGPA',
                   style: TextStyle(
@@ -59,7 +59,7 @@ class CalculatorBody extends StatelessWidget {
                     fontSize: 16,
                   ),
                 ),
-                SizedBox(height: 44),
+                SizedBox(height: 36),
                 SelectableText(
                   'GPA of Each Semester',
                   style: TextStyle(
@@ -68,7 +68,7 @@ class CalculatorBody extends StatelessWidget {
                     fontWeight: FontWeight.w500,
                   ),
                 ),
-                SizedBox(height: 24),
+                SizedBox(height: 20),
                 Column(
                   children: [
                     Row(
@@ -144,7 +144,7 @@ class CalculatorBody extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(height: 24),
+                    SizedBox(height: 20),
                     Row(
                       children: [
                         Container(
@@ -218,7 +218,7 @@ class CalculatorBody extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(height: 24),
+                    SizedBox(height: 20),
                     Row(
                       children: [
                         Container(
@@ -292,7 +292,7 @@ class CalculatorBody extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(height: 24),
+                    SizedBox(height: 20),
                     Row(
                       children: [
                         Container(
@@ -390,7 +390,7 @@ class CalculatorBody extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: 88),
+                SizedBox(height: 72),
                 SelectableText.rich(
                   TextSpan(
                     children: <TextSpan>[
@@ -418,6 +418,37 @@ class CalculatorBody extends StatelessWidget {
                     color: Colors.black54,
                   ),
                 ),
+                SizedBox(height: 16),
+                Row(
+                  children: [
+                    Icon(
+                      Icons.favorite,
+                      color: Colors.black,
+                      size: 20,
+                    ),
+                    SizedBox(width: 8),
+                    SelectableText.rich(
+                      TextSpan(children: [
+                        TextSpan(text: 'Designed & Developed by '),
+                        TextSpan(
+                          text: 'Akhil T J',
+                          style: TextStyle(
+                            decoration: TextDecoration.underline,
+                            fontFamily: 'Montserrat',
+                            fontStyle: FontStyle.italic,
+                            fontSize: 16,
+                            color: Colors.black87,
+                          ),
+                        ),
+                      ]),
+                      style: TextStyle(
+                        fontFamily: 'Montserrat',
+                        fontSize: 16,
+                        color: Colors.black54,
+                      ),
+                    )
+                  ],
+                )
               ],
             ),
           ),
@@ -429,64 +460,6 @@ class CalculatorBody extends StatelessWidget {
           ),
         ],
       ),
-    );
-  }
-}
-
-class CustomeTextField extends StatelessWidget {
-  const CustomeTextField({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 260,
-      height: 48,
-      decoration: BoxDecoration(
-        border: Border.all(color: Colors.black54),
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(6.0),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 12,
-        ),
-        child: FocusScope(
-          child: Focus(
-            child: TextField(
-              cursorColor: Colors.black,
-              textAlign: TextAlign.start,
-              // controller: widget.controller,
-              keyboardType: TextInputType.number,
-              textInputAction: TextInputAction.next,
-              style: TextStyle(
-                color: Colors.black,
-                fontFamily: 'Montserrat',
-                fontSize: 16,
-              ),
-              decoration: InputDecoration(
-                hintText: 'Semester 1(Eg: 7.46)*',
-                border: InputBorder.none,
-              ),
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class CustomTextFiled extends StatelessWidget {
-  const CustomTextFiled({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(''),
-      ],
     );
   }
 }
