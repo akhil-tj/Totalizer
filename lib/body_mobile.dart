@@ -1,4 +1,6 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class CalculatorBodyMobile extends StatelessWidget {
   const CalculatorBodyMobile({Key? key}) : super(key: key);
@@ -456,6 +458,17 @@ class CalculatorBodyMobile extends StatelessWidget {
                       text:
                           'This application is not registered under CUSAT. Please '),
                   TextSpan(
+                    mouseCursor: MaterialStateMouseCursor.clickable,
+                    recognizer: TapGestureRecognizer()
+                      ..onTap = () async {
+                        const url = 'https://google.com';
+                        if (await canLaunch(url)) {
+                          await launch(url);
+                        } else {
+                          throw 'Could not launch $url';
+                        }
+                        print('Tapped Verify the Equation');
+                      },
                     text: 'verify the equation',
                     style: TextStyle(
                       decoration: TextDecoration.underline,
@@ -470,6 +483,17 @@ class CalculatorBodyMobile extends StatelessWidget {
                           ' used for calculation before blindly trusting the developer.'),
                   TextSpan(text: ' Illustration(s) from '),
                   TextSpan(
+                    mouseCursor: MaterialStateMouseCursor.clickable,
+                    recognizer: TapGestureRecognizer()
+                      ..onTap = () async {
+                        const url = 'https://absurd.design';
+                        if (await canLaunch(url)) {
+                          await launch(url);
+                        } else {
+                          throw 'Could not launch $url';
+                        }
+                        print('Tapped absurd.design');
+                      },
                     text: 'absurd.design',
                     style: TextStyle(
                       decoration: TextDecoration.underline,
@@ -500,6 +524,18 @@ class CalculatorBodyMobile extends StatelessWidget {
                   TextSpan(children: [
                     TextSpan(text: 'Designed & Developed by '),
                     TextSpan(
+                      mouseCursor: MaterialStateMouseCursor.clickable,
+                      recognizer: TapGestureRecognizer()
+                        ..onTap = () async {
+                          const url = 'https://akhiltj.codes';
+                          if (await canLaunch(url)) {
+                            await launch(url);
+                          } else {
+                            throw 'Could not launch $url';
+                          }
+                          print('Tapped absurd.design');
+                          print('Tapped Akhil T J');
+                        },
                       text: 'Akhil T J',
                       style: TextStyle(
                         decoration: TextDecoration.underline,
