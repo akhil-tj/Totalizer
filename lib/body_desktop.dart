@@ -66,7 +66,7 @@ class CalculatorBodyDesktop extends StatelessWidget {
                 ),
                 SizedBox(height: 40),
                 SelectableText(
-                  'GPA of Each Semester(Eg: 7.14)',
+                  'GPA of Each Semester(Eg: 7.80)',
                   style: TextStyle(
                     fontFamily: 'Montserrat',
                     fontSize: 20,
@@ -82,45 +82,41 @@ class CalculatorBodyDesktop extends StatelessWidget {
                         children: [
                           Container(
                             width: 260,
-                            height: 48,
-                            decoration: BoxDecoration(
-                              border: Border.all(color: Colors.black54),
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(6.0),
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 12,
-                              ),
-                              child: FocusScope(
-                                child: Focus(
-                                  child: TextFormField(
-                                    validator: (value) {
-                                      if (value!.isEmpty) {
-                                        return "Semester 1 GPA cannot be empty";
-                                      } else if (double.parse(value)
-                                          .isNegative) {
-                                        return "GPA should not be negative";
-                                      } else if (double.parse(value) < 5.0) {
-                                        return "GPA should not be less than 5.0";
-                                      } else if (value.length > 5) {
-                                        return "GPA should be not be greater than 4";
-                                      } else
-                                        return null;
-                                    },
-                                    controller: semester_1,
-                                    cursorColor: Colors.black,
-                                    textAlign: TextAlign.start,
-                                    keyboardType: TextInputType.number,
-                                    textInputAction: TextInputAction.next,
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                      fontFamily: 'Montserrat',
-                                      fontSize: 16,
-                                    ),
-                                    decoration: InputDecoration(
-                                      hintText: 'Semester 1 (Required)*',
-                                      border: InputBorder.none,
+                            child: FocusScope(
+                              child: Focus(
+                                child: TextFormField(
+                                  validator: (value) {
+                                    if (value!.isEmpty) {
+                                      return "GPA of semester 1 cannot be empty";
+                                    } else if (double.parse(value).isNegative) {
+                                      return "GPA should not be negative";
+                                    } else if (double.parse(value) < 5.0) {
+                                      return "GPA should not be less than 5.0";
+                                    } else if (value.length > 4) {
+                                      return "GPA can have only a max of 3 digits";
+                                    } else
+                                      return null;
+                                  },
+                                  controller: semester_1,
+                                  cursorColor: Colors.black,
+                                  textAlign: TextAlign.start,
+                                  keyboardType: TextInputType.number,
+                                  textInputAction: TextInputAction.next,
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontFamily: 'Montserrat',
+                                    fontSize: 16,
+                                  ),
+                                  decoration: new InputDecoration(
+                                    hintText: 'Semester 1 (Required)*',
+                                    border: new OutlineInputBorder(
+                                      borderRadius: const BorderRadius.all(
+                                        const Radius.circular(6.0),
+                                      ),
+                                      borderSide: new BorderSide(
+                                        color: Colors.black,
+                                        width: 1.0,
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -130,45 +126,41 @@ class CalculatorBodyDesktop extends StatelessWidget {
                           SizedBox(width: 80),
                           Container(
                             width: 260,
-                            height: 48,
-                            decoration: BoxDecoration(
-                              border: Border.all(color: Colors.black54),
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(6.0),
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 12,
-                              ),
-                              child: FocusScope(
-                                child: Focus(
-                                  child: TextFormField(
-                                    validator: (value) {
-                                      if (value!.isEmpty) {
-                                        return null;
-                                      } else if (double.parse(value)
-                                          .isNegative) {
-                                        return "GPA should not be negative";
-                                      } else if (double.parse(value) < 5.0) {
-                                        return "GPA should not be less than 5.0";
-                                      } else if (value.length > 5) {
-                                        return "GPA should be not be greater than 4";
-                                      } else
-                                        return null;
-                                    },
-                                    controller: semester_2,
-                                    cursorColor: Colors.black,
-                                    textAlign: TextAlign.start,
-                                    keyboardType: TextInputType.number,
-                                    textInputAction: TextInputAction.next,
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                      fontFamily: 'Montserrat',
-                                      fontSize: 16,
-                                    ),
-                                    decoration: InputDecoration(
-                                      hintText: 'Semester 2',
-                                      border: InputBorder.none,
+                            child: FocusScope(
+                              child: Focus(
+                                child: TextFormField(
+                                  validator: (value) {
+                                    if (value!.isEmpty) {
+                                      return null;
+                                    } else if (double.parse(value).isNegative) {
+                                      return "GPA should not be negative";
+                                    } else if (double.parse(value) < 5.0) {
+                                      return "GPA should not be less than 5.0";
+                                    } else if (value.length > 4) {
+                                      return "GPA can have only a max of 3 digits";
+                                    } else
+                                      return null;
+                                  },
+                                  controller: semester_2,
+                                  cursorColor: Colors.black,
+                                  textAlign: TextAlign.start,
+                                  keyboardType: TextInputType.number,
+                                  textInputAction: TextInputAction.next,
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontFamily: 'Montserrat',
+                                    fontSize: 16,
+                                  ),
+                                  decoration: new InputDecoration(
+                                    hintText: 'Semester 2',
+                                    border: new OutlineInputBorder(
+                                      borderRadius: const BorderRadius.all(
+                                        const Radius.circular(6.0),
+                                      ),
+                                      borderSide: new BorderSide(
+                                        color: Colors.black,
+                                        width: 1.0,
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -182,45 +174,41 @@ class CalculatorBodyDesktop extends StatelessWidget {
                         children: [
                           Container(
                             width: 260,
-                            height: 48,
-                            decoration: BoxDecoration(
-                              border: Border.all(color: Colors.black54),
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(6.0),
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 12,
-                              ),
-                              child: FocusScope(
-                                child: Focus(
-                                  child: TextFormField(
-                                    validator: (value) {
-                                      if (value!.isEmpty) {
-                                        return null;
-                                      } else if (double.parse(value)
-                                          .isNegative) {
-                                        return "GPA should not be negative";
-                                      } else if (double.parse(value) < 5.0) {
-                                        return "GPA should not be less than 5.0";
-                                      } else if (value.length > 5) {
-                                        return "GPA should be not be greater than 4";
-                                      } else
-                                        return null;
-                                    },
-                                    controller: semester_3,
-                                    cursorColor: Colors.black,
-                                    textAlign: TextAlign.start,
-                                    keyboardType: TextInputType.number,
-                                    textInputAction: TextInputAction.next,
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                      fontFamily: 'Montserrat',
-                                      fontSize: 16,
-                                    ),
-                                    decoration: InputDecoration(
-                                      hintText: 'Semester 3',
-                                      border: InputBorder.none,
+                            child: FocusScope(
+                              child: Focus(
+                                child: TextFormField(
+                                  validator: (value) {
+                                    if (value!.isEmpty) {
+                                      return null;
+                                    } else if (double.parse(value).isNegative) {
+                                      return "GPA should not be negative";
+                                    } else if (double.parse(value) < 5.0) {
+                                      return "GPA should not be less than 5.0";
+                                    } else if (value.length > 4) {
+                                      return "GPA can have only a max of 3 digits";
+                                    } else
+                                      return null;
+                                  },
+                                  controller: semester_3,
+                                  cursorColor: Colors.black,
+                                  textAlign: TextAlign.start,
+                                  keyboardType: TextInputType.number,
+                                  textInputAction: TextInputAction.next,
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontFamily: 'Montserrat',
+                                    fontSize: 16,
+                                  ),
+                                  decoration: new InputDecoration(
+                                    hintText: 'Semester 3',
+                                    border: new OutlineInputBorder(
+                                      borderRadius: const BorderRadius.all(
+                                        const Radius.circular(6.0),
+                                      ),
+                                      borderSide: new BorderSide(
+                                        color: Colors.black,
+                                        width: 1.0,
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -230,45 +218,41 @@ class CalculatorBodyDesktop extends StatelessWidget {
                           SizedBox(width: 80),
                           Container(
                             width: 260,
-                            height: 48,
-                            decoration: BoxDecoration(
-                              border: Border.all(color: Colors.black54),
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(6.0),
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 12,
-                              ),
-                              child: FocusScope(
-                                child: Focus(
-                                  child: TextFormField(
-                                    validator: (value) {
-                                      if (value!.isEmpty) {
-                                        return null;
-                                      } else if (double.parse(value)
-                                          .isNegative) {
-                                        return "GPA should not be negative";
-                                      } else if (double.parse(value) < 5.0) {
-                                        return "GPA should not be less than 5.0";
-                                      } else if (value.length > 5) {
-                                        return "GPA should be not be greater than 4";
-                                      } else
-                                        return null;
-                                    },
-                                    controller: semester_4,
-                                    cursorColor: Colors.black,
-                                    textAlign: TextAlign.start,
-                                    keyboardType: TextInputType.number,
-                                    textInputAction: TextInputAction.next,
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                      fontFamily: 'Montserrat',
-                                      fontSize: 16,
-                                    ),
-                                    decoration: InputDecoration(
-                                      hintText: 'Semester 4',
-                                      border: InputBorder.none,
+                            child: FocusScope(
+                              child: Focus(
+                                child: TextFormField(
+                                  validator: (value) {
+                                    if (value!.isEmpty) {
+                                      return null;
+                                    } else if (double.parse(value).isNegative) {
+                                      return "GPA should not be negative";
+                                    } else if (double.parse(value) < 5.0) {
+                                      return "GPA should not be less than 5.0";
+                                    } else if (value.length > 4) {
+                                      return "GPA can have only a max of 3 digits";
+                                    } else
+                                      return null;
+                                  },
+                                  controller: semester_4,
+                                  cursorColor: Colors.black,
+                                  textAlign: TextAlign.start,
+                                  keyboardType: TextInputType.number,
+                                  textInputAction: TextInputAction.next,
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontFamily: 'Montserrat',
+                                    fontSize: 16,
+                                  ),
+                                  decoration: new InputDecoration(
+                                    hintText: 'Semester 4',
+                                    border: new OutlineInputBorder(
+                                      borderRadius: const BorderRadius.all(
+                                        const Radius.circular(6.0),
+                                      ),
+                                      borderSide: new BorderSide(
+                                        color: Colors.black,
+                                        width: 1.0,
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -282,45 +266,41 @@ class CalculatorBodyDesktop extends StatelessWidget {
                         children: [
                           Container(
                             width: 260,
-                            height: 48,
-                            decoration: BoxDecoration(
-                              border: Border.all(color: Colors.black54),
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(6.0),
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 12,
-                              ),
-                              child: FocusScope(
-                                child: Focus(
-                                  child: TextFormField(
-                                    validator: (value) {
-                                      if (value!.isEmpty) {
-                                        return null;
-                                      } else if (double.parse(value)
-                                          .isNegative) {
-                                        return "GPA should not be negative";
-                                      } else if (double.parse(value) < 5.0) {
-                                        return "GPA should not be less than 5.0";
-                                      } else if (value.length > 5) {
-                                        return "GPA should be not be greater than 4";
-                                      } else
-                                        return null;
-                                    },
-                                    controller: semester_5,
-                                    cursorColor: Colors.black,
-                                    textAlign: TextAlign.start,
-                                    keyboardType: TextInputType.number,
-                                    textInputAction: TextInputAction.next,
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                      fontFamily: 'Montserrat',
-                                      fontSize: 16,
-                                    ),
-                                    decoration: InputDecoration(
-                                      hintText: 'Semester 5',
-                                      border: InputBorder.none,
+                            child: FocusScope(
+                              child: Focus(
+                                child: TextFormField(
+                                  validator: (value) {
+                                    if (value!.isEmpty) {
+                                      return null;
+                                    } else if (double.parse(value).isNegative) {
+                                      return "GPA should not be negative";
+                                    } else if (double.parse(value) < 5.0) {
+                                      return "GPA should not be less than 5.0";
+                                    } else if (value.length > 4) {
+                                      return "GPA can have only a max of 3 digits";
+                                    } else
+                                      return null;
+                                  },
+                                  controller: semester_5,
+                                  cursorColor: Colors.black,
+                                  textAlign: TextAlign.start,
+                                  keyboardType: TextInputType.number,
+                                  textInputAction: TextInputAction.next,
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontFamily: 'Montserrat',
+                                    fontSize: 16,
+                                  ),
+                                  decoration: new InputDecoration(
+                                    hintText: 'Semester 5',
+                                    border: new OutlineInputBorder(
+                                      borderRadius: const BorderRadius.all(
+                                        const Radius.circular(6.0),
+                                      ),
+                                      borderSide: new BorderSide(
+                                        color: Colors.black,
+                                        width: 1.0,
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -330,45 +310,41 @@ class CalculatorBodyDesktop extends StatelessWidget {
                           SizedBox(width: 80),
                           Container(
                             width: 260,
-                            height: 48,
-                            decoration: BoxDecoration(
-                              border: Border.all(color: Colors.black54),
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(6.0),
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 12,
-                              ),
-                              child: FocusScope(
-                                child: Focus(
-                                  child: TextFormField(
-                                    validator: (value) {
-                                      if (value!.isEmpty) {
-                                        return null;
-                                      } else if (double.parse(value)
-                                          .isNegative) {
-                                        return "GPA should not be negative";
-                                      } else if (double.parse(value) < 5.0) {
-                                        return "GPA should not be less than 5.0";
-                                      } else if (value.length > 5) {
-                                        return "GPA should be not be greater than 4";
-                                      } else
-                                        return null;
-                                    },
-                                    controller: semester_6,
-                                    cursorColor: Colors.black,
-                                    textAlign: TextAlign.start,
-                                    keyboardType: TextInputType.number,
-                                    textInputAction: TextInputAction.next,
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                      fontFamily: 'Montserrat',
-                                      fontSize: 16,
-                                    ),
-                                    decoration: InputDecoration(
-                                      hintText: 'Semester 6',
-                                      border: InputBorder.none,
+                            child: FocusScope(
+                              child: Focus(
+                                child: TextFormField(
+                                  validator: (value) {
+                                    if (value!.isEmpty) {
+                                      return null;
+                                    } else if (double.parse(value).isNegative) {
+                                      return "GPA should not be negative";
+                                    } else if (double.parse(value) < 5.0) {
+                                      return "GPA should not be less than 5.0";
+                                    } else if (value.length > 4) {
+                                      return "GPA can have only a max of 3 digits";
+                                    } else
+                                      return null;
+                                  },
+                                  controller: semester_6,
+                                  cursorColor: Colors.black,
+                                  textAlign: TextAlign.start,
+                                  keyboardType: TextInputType.number,
+                                  textInputAction: TextInputAction.next,
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontFamily: 'Montserrat',
+                                    fontSize: 16,
+                                  ),
+                                  decoration: new InputDecoration(
+                                    hintText: 'Semester 6',
+                                    border: new OutlineInputBorder(
+                                      borderRadius: const BorderRadius.all(
+                                        const Radius.circular(6.0),
+                                      ),
+                                      borderSide: new BorderSide(
+                                        color: Colors.black,
+                                        width: 1.0,
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -382,45 +358,41 @@ class CalculatorBodyDesktop extends StatelessWidget {
                         children: [
                           Container(
                             width: 260,
-                            height: 48,
-                            decoration: BoxDecoration(
-                              border: Border.all(color: Colors.black54),
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(6.0),
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 12,
-                              ),
-                              child: FocusScope(
-                                child: Focus(
-                                  child: TextFormField(
-                                    validator: (value) {
-                                      if (value!.isEmpty) {
-                                        return null;
-                                      } else if (double.parse(value)
-                                          .isNegative) {
-                                        return "GPA should not be negative";
-                                      } else if (double.parse(value) < 5.0) {
-                                        return "GPA should not be less than 5.0";
-                                      } else if (value.length > 5) {
-                                        return "GPA should be not be greater than 4";
-                                      } else
-                                        return null;
-                                    },
-                                    controller: semester_7,
-                                    cursorColor: Colors.black,
-                                    textAlign: TextAlign.start,
-                                    keyboardType: TextInputType.number,
-                                    textInputAction: TextInputAction.next,
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                      fontFamily: 'Montserrat',
-                                      fontSize: 16,
-                                    ),
-                                    decoration: InputDecoration(
-                                      hintText: 'Semester 7',
-                                      border: InputBorder.none,
+                            child: FocusScope(
+                              child: Focus(
+                                child: TextFormField(
+                                  validator: (value) {
+                                    if (value!.isEmpty) {
+                                      return null;
+                                    } else if (double.parse(value).isNegative) {
+                                      return "GPA should not be negative";
+                                    } else if (double.parse(value) < 5.0) {
+                                      return "GPA should not be less than 5.0";
+                                    } else if (value.length > 4) {
+                                      return "GPA can have only a max of 3 digits";
+                                    } else
+                                      return null;
+                                  },
+                                  controller: semester_7,
+                                  cursorColor: Colors.black,
+                                  textAlign: TextAlign.start,
+                                  keyboardType: TextInputType.number,
+                                  textInputAction: TextInputAction.next,
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontFamily: 'Montserrat',
+                                    fontSize: 16,
+                                  ),
+                                  decoration: new InputDecoration(
+                                    hintText: 'Semester 7',
+                                    border: new OutlineInputBorder(
+                                      borderRadius: const BorderRadius.all(
+                                        const Radius.circular(6.0),
+                                      ),
+                                      borderSide: new BorderSide(
+                                        color: Colors.black,
+                                        width: 1.0,
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -430,45 +402,41 @@ class CalculatorBodyDesktop extends StatelessWidget {
                           SizedBox(width: 80),
                           Container(
                             width: 260,
-                            height: 48,
-                            decoration: BoxDecoration(
-                              border: Border.all(color: Colors.black54),
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(6.0),
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 12,
-                              ),
-                              child: FocusScope(
-                                child: Focus(
-                                  child: TextFormField(
-                                    validator: (value) {
-                                      if (value!.isEmpty) {
-                                        return null;
-                                      } else if (double.parse(value)
-                                          .isNegative) {
-                                        return "GPA should not be negative";
-                                      } else if (double.parse(value) < 5.0) {
-                                        return "GPA should not be less than 5.0";
-                                      } else if (value.length > 5) {
-                                        return "GPA should be not be greater than 4";
-                                      } else
-                                        return null;
-                                    },
-                                    controller: semester_8,
-                                    cursorColor: Colors.black,
-                                    textAlign: TextAlign.start,
-                                    keyboardType: TextInputType.number,
-                                    textInputAction: TextInputAction.next,
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                      fontFamily: 'Montserrat',
-                                      fontSize: 16,
-                                    ),
-                                    decoration: InputDecoration(
-                                      hintText: 'Semester 8',
-                                      border: InputBorder.none,
+                            child: FocusScope(
+                              child: Focus(
+                                child: TextFormField(
+                                  validator: (value) {
+                                    if (value!.isEmpty) {
+                                      return null;
+                                    } else if (double.parse(value).isNegative) {
+                                      return "GPA should not be negative";
+                                    } else if (double.parse(value) < 5.0) {
+                                      return "GPA should not be less than 5.0";
+                                    } else if (value.length > 4) {
+                                      return "GPA can have only a max of 3 digits";
+                                    } else
+                                      return null;
+                                  },
+                                  controller: semester_8,
+                                  cursorColor: Colors.black,
+                                  textAlign: TextAlign.start,
+                                  keyboardType: TextInputType.number,
+                                  textInputAction: TextInputAction.next,
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontFamily: 'Montserrat',
+                                    fontSize: 16,
+                                  ),
+                                  decoration: new InputDecoration(
+                                    hintText: 'Semester 8',
+                                    border: new OutlineInputBorder(
+                                      borderRadius: const BorderRadius.all(
+                                        const Radius.circular(6.0),
+                                      ),
+                                      borderSide: new BorderSide(
+                                        color: Colors.black,
+                                        width: 1.0,
+                                      ),
                                     ),
                                   ),
                                 ),
