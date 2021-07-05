@@ -1,3 +1,4 @@
+import 'package:cusat_cgpa_calculator/custom_alert_dialog.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -606,6 +607,14 @@ class CalculatorBodyMobile extends StatelessWidget {
                   if (_key.currentState!.validate()) {
                     print("Your data is submitted");
                   }
+
+                  DialogUtils.showCustomDialog(
+                    context,
+                    title: "Gallary",
+                    okBtnText: "Save",
+                    cancelBtnText: "Cancel",
+                    // okBtnFunction: () => /* call method in which you have write your logic and save process  */),
+                  );
                 },
                 child: Padding(
                   padding:
