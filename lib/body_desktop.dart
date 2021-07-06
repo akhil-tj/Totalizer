@@ -1,3 +1,4 @@
+import 'package:cusat_cgpa_calculator/custom_alert_dialog.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -16,6 +17,15 @@ class CalculatorBodyDesktop extends StatelessWidget {
   TextEditingController semester_8 = TextEditingController();
 
   double s1 = 0, s2 = 0, s3 = 0, s4 = 0, s5 = 0, s6 = 0, s7 = 0, s8 = 0;
+
+  bool flag1 = true,
+      flag2 = true,
+      flag3 = true,
+      flag4 = true,
+      flag5 = true,
+      flag6 = true,
+      flag7 = true,
+      flag8 = true;
 
   @override
   // ignore: override_on_non_overriding_member
@@ -87,15 +97,21 @@ class CalculatorBodyDesktop extends StatelessWidget {
                                 child: TextFormField(
                                   validator: (value) {
                                     if (value!.isEmpty) {
+                                      flag1 = false;
                                       return "GPA of semester 1 cannot be empty";
                                     } else if (double.parse(value).isNegative) {
+                                      flag1 = false;
                                       return "GPA should not be negative";
                                     } else if (double.parse(value) < 5.0) {
+                                      flag1 = false;
                                       return "GPA should not be less than 5.0";
                                     } else if (value.length > 4) {
+                                      flag1 = false;
                                       return "GPA can have only a max of 3 digits";
-                                    } else
+                                    } else {
+                                      flag1 = true;
                                       return null;
+                                    }
                                   },
                                   controller: semester_1,
                                   cursorColor: Colors.black,
@@ -131,15 +147,21 @@ class CalculatorBodyDesktop extends StatelessWidget {
                                 child: TextFormField(
                                   validator: (value) {
                                     if (value!.isEmpty) {
+                                      flag2 = true;
                                       return null;
                                     } else if (double.parse(value).isNegative) {
+                                      flag2 = false;
                                       return "GPA should not be negative";
                                     } else if (double.parse(value) < 5.0) {
+                                      flag2 = false;
                                       return "GPA should not be less than 5.0";
                                     } else if (value.length > 4) {
+                                      flag2 = false;
                                       return "GPA can have only a max of 3 digits";
-                                    } else
+                                    } else {
+                                      flag2 = true;
                                       return null;
+                                    }
                                   },
                                   controller: semester_2,
                                   cursorColor: Colors.black,
@@ -179,15 +201,21 @@ class CalculatorBodyDesktop extends StatelessWidget {
                                 child: TextFormField(
                                   validator: (value) {
                                     if (value!.isEmpty) {
+                                      flag3 = true;
                                       return null;
                                     } else if (double.parse(value).isNegative) {
+                                      flag3 = false;
                                       return "GPA should not be negative";
                                     } else if (double.parse(value) < 5.0) {
+                                      flag3 = false;
                                       return "GPA should not be less than 5.0";
                                     } else if (value.length > 4) {
+                                      flag3 = false;
                                       return "GPA can have only a max of 3 digits";
-                                    } else
+                                    } else {
+                                      flag3 = true;
                                       return null;
+                                    }
                                   },
                                   controller: semester_3,
                                   cursorColor: Colors.black,
@@ -223,15 +251,21 @@ class CalculatorBodyDesktop extends StatelessWidget {
                                 child: TextFormField(
                                   validator: (value) {
                                     if (value!.isEmpty) {
+                                      flag3 = true;
                                       return null;
                                     } else if (double.parse(value).isNegative) {
+                                      flag4 = false;
                                       return "GPA should not be negative";
                                     } else if (double.parse(value) < 5.0) {
+                                      flag4 = false;
                                       return "GPA should not be less than 5.0";
                                     } else if (value.length > 4) {
+                                      flag4 = false;
                                       return "GPA can have only a max of 3 digits";
-                                    } else
+                                    } else {
+                                      flag4 = true;
                                       return null;
+                                    }
                                   },
                                   controller: semester_4,
                                   cursorColor: Colors.black,
@@ -271,15 +305,21 @@ class CalculatorBodyDesktop extends StatelessWidget {
                                 child: TextFormField(
                                   validator: (value) {
                                     if (value!.isEmpty) {
+                                      flag5 = true;
                                       return null;
                                     } else if (double.parse(value).isNegative) {
+                                      flag5 = false;
                                       return "GPA should not be negative";
                                     } else if (double.parse(value) < 5.0) {
+                                      flag5 = false;
                                       return "GPA should not be less than 5.0";
                                     } else if (value.length > 4) {
+                                      flag5 = false;
                                       return "GPA can have only a max of 3 digits";
-                                    } else
+                                    } else {
+                                      flag5 = true;
                                       return null;
+                                    }
                                   },
                                   controller: semester_5,
                                   cursorColor: Colors.black,
@@ -315,15 +355,21 @@ class CalculatorBodyDesktop extends StatelessWidget {
                                 child: TextFormField(
                                   validator: (value) {
                                     if (value!.isEmpty) {
+                                      flag6 = true;
                                       return null;
                                     } else if (double.parse(value).isNegative) {
+                                      flag6 = false;
                                       return "GPA should not be negative";
                                     } else if (double.parse(value) < 5.0) {
+                                      flag6 = false;
                                       return "GPA should not be less than 5.0";
                                     } else if (value.length > 4) {
+                                      flag6 = false;
                                       return "GPA can have only a max of 3 digits";
-                                    } else
+                                    } else {
+                                      flag6 = true;
                                       return null;
+                                    }
                                   },
                                   controller: semester_6,
                                   cursorColor: Colors.black,
@@ -363,15 +409,21 @@ class CalculatorBodyDesktop extends StatelessWidget {
                                 child: TextFormField(
                                   validator: (value) {
                                     if (value!.isEmpty) {
+                                      flag7 = true;
                                       return null;
                                     } else if (double.parse(value).isNegative) {
+                                      flag7 = false;
                                       return "GPA should not be negative";
                                     } else if (double.parse(value) < 5.0) {
+                                      flag7 = false;
                                       return "GPA should not be less than 5.0";
                                     } else if (value.length > 4) {
+                                      flag7 = false;
                                       return "GPA can have only a max of 3 digits";
-                                    } else
+                                    } else {
+                                      flag7 = true;
                                       return null;
+                                    }
                                   },
                                   controller: semester_7,
                                   cursorColor: Colors.black,
@@ -407,15 +459,21 @@ class CalculatorBodyDesktop extends StatelessWidget {
                                 child: TextFormField(
                                   validator: (value) {
                                     if (value!.isEmpty) {
+                                      flag8 = true;
                                       return null;
                                     } else if (double.parse(value).isNegative) {
+                                      flag8 = false;
                                       return "GPA should not be negative";
                                     } else if (double.parse(value) < 5.0) {
+                                      flag8 = false;
                                       return "GPA should not be less than 5.0";
                                     } else if (value.length > 4) {
+                                      flag8 = false;
                                       return "GPA can have only a max of 3 digits";
-                                    } else
+                                    } else {
+                                      flag8 = true;
                                       return null;
+                                    }
                                   },
                                   controller: semester_8,
                                   cursorColor: Colors.black,
@@ -520,7 +578,20 @@ class CalculatorBodyDesktop extends StatelessWidget {
                     if (_key.currentState!.validate()) {
                       print("Your data is submitted");
                     }
-                    
+                    if (flag1 == true &&
+                        flag2 == true &&
+                        flag3 == true &&
+                        flag4 == true &&
+                        flag5 == true &&
+                        flag6 == true &&
+                        flag7 == true &&
+                        flag8 == true) {
+                      DialogUtils.showCustomDialog(
+                        context,
+                        paddingValue: 470,
+                        // okBtnFunction: () => /* call method in which you have write your logic and save process  */),
+                      );
+                    }
                   },
                   child: Padding(
                     padding: const EdgeInsets.symmetric(

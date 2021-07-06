@@ -610,9 +610,7 @@ class CalculatorBodyMobile extends StatelessWidget {
 
                   DialogUtils.showCustomDialog(
                     context,
-                    title: "Gallary",
-                    okBtnText: "Save",
-                    cancelBtnText: "Cancel",
+                    paddingValue: 0,
                     // okBtnFunction: () => /* call method in which you have write your logic and save process  */),
                   );
                 },
