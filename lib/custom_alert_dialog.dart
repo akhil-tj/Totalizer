@@ -9,10 +9,12 @@ class DialogUtils {
 
   factory DialogUtils() => _instance;
 
-  static void showCustomDialog(BuildContext context,
-      {required double paddingValue,
-      //@required Function? okBtnFunction
-      }) {
+  static void showCustomDialog(
+    BuildContext context, {
+    required double paddingValue,
+    required double result,
+    //@required Function? okBtnFunction
+  }) {
     showDialog(
         context: context,
         builder: (_) {
@@ -33,7 +35,7 @@ class DialogUtils {
                   ),
                   SizedBox(height: 20),
                   Text(
-                    '7.68',
+                    result.toStringAsFixed(2),
                     style: TextStyle(
                       fontFamily: 'Montserrat',
                       fontSize: 56,
@@ -53,7 +55,8 @@ class DialogUtils {
                           mouseCursor: MaterialStateMouseCursor.clickable,
                           recognizer: TapGestureRecognizer()
                             ..onTap = () async {
-                              const url = 'https://google.com';
+                              const url =
+                                  'http://cucek.cusat.ac.in/files/regulations.pdf';
                               if (await canLaunch(url)) {
                                 await launch(url);
                               } else {
@@ -114,7 +117,9 @@ class DialogUtils {
                         ),
                         primary: Colors.black,
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
                       child: Padding(
                         padding: const EdgeInsets.symmetric(
                             horizontal: 32, vertical: 12),
@@ -131,7 +136,15 @@ class DialogUtils {
                   ),
                   SizedBox(height: 6),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () async {
+                      const url = 'https://forms.gle/z4oLTYsUhCV8BAMp6';
+                      if (await canLaunch(url)) {
+                        await launch(url);
+                      } else {
+                        throw 'Could not launch $url';
+                      }
+                      print('Tapped absurd.design');
+                    },
                     child: Text(
                       'Report an Error',
                       style: TextStyle(

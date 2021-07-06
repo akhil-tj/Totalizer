@@ -566,7 +566,7 @@ class CalculatorBodyDesktop extends StatelessWidget {
                     if (semester_8.text.isEmpty) {
                       count--;
                     }
-                    print((s1 * 22 +
+                    double result = (s1 * 22 +
                             s2 * 22 +
                             s3 * 22 +
                             s4 * 22 +
@@ -574,7 +574,7 @@ class CalculatorBodyDesktop extends StatelessWidget {
                             s6 * 22 +
                             s7 * 22 +
                             s8 * 22) /
-                        (count * 22));
+                        (count * 22);
                     if (_key.currentState!.validate()) {
                       print("Your data is submitted");
                     }
@@ -588,7 +588,7 @@ class CalculatorBodyDesktop extends StatelessWidget {
                         flag8 == true) {
                       DialogUtils.showCustomDialog(
                         context,
-                        paddingValue: 470,
+                        paddingValue: 470, result: result,
                         // okBtnFunction: () => /* call method in which you have write your logic and save process  */),
                       );
                     }
@@ -612,12 +612,13 @@ class CalculatorBodyDesktop extends StatelessWidget {
                     children: <TextSpan>[
                       TextSpan(
                           text:
-                              'This application is not officially povided by CUSAT. Please '),
+                              'This is not an official application of CUSAT. Please '),
                       TextSpan(
                         mouseCursor: MaterialStateMouseCursor.clickable,
                         recognizer: TapGestureRecognizer()
                           ..onTap = () async {
-                            const url = 'https://google.com';
+                            const url =
+                                'http://cucek.cusat.ac.in/files/regulations.pdf';
                             if (await canLaunch(url)) {
                               await launch(url);
                             } else {
